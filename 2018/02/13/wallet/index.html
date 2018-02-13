@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="//wangmaodong.cn">
   <title>比特股Web钱包搭建以及接入到私有链 | Leon的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别 1.依赖环境配置BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令安装NVM以及V6: 12curl -o- https://raw.githubus">
+  <meta name="description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别">
 <meta name="keywords" content="区块链,比特股,bitshares,钱包,wallet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="比特股Web钱包搭建以及接入到私有链">
 <meta property="og:url" content="//wangmaodong.cn/2018/02/13/wallet/index.html">
 <meta property="og:site_name" content="Leon的博客">
-<meta property="og:description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别 1.依赖环境配置BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令安装NVM以及V6: 12curl -o- https://raw.githubus">
+<meta property="og:description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别">
 <meta property="og:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/save_node.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/success.png">
-<meta property="og:updated_time" content="2018-02-13T03:11:00.932Z">
+<meta property="og:updated_time" content="2018-02-13T03:28:32.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="比特股Web钱包搭建以及接入到私有链">
-<meta name="twitter:description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别 1.依赖环境配置BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令安装NVM以及V6: 12curl -o- https://raw.githubus">
+<meta name="twitter:description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png">
   
     <link rel="alternative" href="/atom.xml" title="Leon的博客" type="application/atom+xml">
@@ -167,7 +167,7 @@
 
         
         <a href="/2018/02/13/wallet/" class="archive-article-date">
-  	<time datetime="2018-02-13T03:11:00.932Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
+  	<time datetime="2018-02-13T03:28:32.829Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
 </a>
         
       </header>
@@ -175,6 +175,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别</p>
+<a id="more"></a>
 <h1 id="1-依赖环境配置"><a href="#1-依赖环境配置" class="headerlink" title="1.依赖环境配置"></a>1.依赖环境配置</h1><p>BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令<br>安装NVM以及V6:</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/creationix/</span>nvm<span class="regexp">/v0.30.2/i</span>nstall.sh | bash</span><br><span class="line">nvm install v6</span><br></pre></td></tr></table></figure>
 <p>切换到v6:</p>
@@ -516,15 +517,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">钱包</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">wallet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
               </li>
             
             <div class="clearfix"></div>
