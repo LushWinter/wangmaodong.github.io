@@ -164,7 +164,7 @@
 
         
         <a href="/2018/02/13/eth/" class="archive-article-date">
-  	<time datetime="2018-02-13T02:48:54.838Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
+  	<time datetime="2018-02-13T03:11:13.776Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
 </a>
         
       </header>
@@ -225,6 +225,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">以太坊</a>
         		</li>
       		
@@ -265,119 +269,6 @@
 
 
   
-    <article id="post-Blog_Markdown/bitshares/比特股Web钱包搭建以及接入到私有链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/13/wallet/">比特股Web钱包搭建以及接入到私有链</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/13/wallet/" class="archive-article-date">
-  	<time datetime="2018-02-13T02:48:31.810Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别</p>
-<h1 id="1-依赖环境配置"><a href="#1-依赖环境配置" class="headerlink" title="1.依赖环境配置"></a>1.依赖环境配置</h1><p>BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令<br>安装NVM以及V6:</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/creationix/</span>nvm<span class="regexp">/v0.30.2/i</span>nstall.sh | bash</span><br><span class="line">nvm install v6</span><br></pre></td></tr></table></figure>
-<p>切换到v6:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="keyword">use</span> v6</span><br></pre></td></tr></table></figure>
-<p>这个查看node是否已经切换到V6：</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span> </span><br><span class="line">v6.<span class="number">12.3</span></span><br></pre></td></tr></table></figure>
-<p>本地切换只针对当前命令行窗口有效，新打开命令行，需要重新切换v6</p>
-<h1 id="2-代码下载及编译"><a href="#2-代码下载及编译" class="headerlink" title="2.代码下载及编译"></a>2.代码下载及编译</h1><h2 id="获取项目源代码"><a href="#获取项目源代码" class="headerlink" title="获取项目源代码"></a>获取项目源代码</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/bitshares/bitshares-ui.git</span><br><span class="line">cd bitshares-ui</span><br></pre></td></tr></table></figure>
-<h2 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
-<h2 id="编译及启动服务器"><a href="#编译及启动服务器" class="headerlink" title="编译及启动服务器"></a>编译及启动服务器</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
-<p>成功的话，会看到如下提示：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">webpack:</span> Compiled successfully.</span><br></pre></td></tr></table></figure>
-<p>此时打开浏览器输入如下地址就可以看到web钱包已经运行起来：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:8080</span></span><br></pre></td></tr></table></figure>
-<p>默认接入的比特股公有链，这个和比特股的官方钱包是一样的，它是一个钱包同时是一个交易所。<br>目前的比特股交易所都是通过这种方式搭建的，主要用来上线一些数字货币以及通过注册账户获取账户的交易手续费来盈利，大致的步骤如下：</p>
-<ul>
-<li>搭建见证人节点</li>
-<li>搭建比特股钱包</li>
-<li>搭建水龙头服务</li>
-</ul>
-<p>具体手续费的分配比例与比特股的账户引荐人制度有关系，以后在具体阐述。</p>
-<h1 id="3-钱包接入到私有链"><a href="#3-钱包接入到私有链" class="headerlink" title="3.钱包接入到私有链"></a>3.钱包接入到私有链</h1><p>上述步奏已经完成了比特股钱包的搭建，并接入到公有链中，那么如何将钱包接入的自己搭建的私有链中呢，其实很简单，在当前打开的钱包中点击Settings-&gt;Access 点击Add node,如下图所示：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png" alt="image"></p>
-<p>添加完成之后选中新建的节点点击active,即激活使用本地节点了，如下图所显示：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/save_node.png" alt="image"></p>
-<p>点击Exlpore,看以看到本地节点生成的区块，可以通过cli-walletz执行转账，验证区块是否将建议打包，可以多转几次：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unlocked <span class="meta">&gt;&gt;&gt; </span>transfer nathan alpha <span class="number">2</span> BTS <span class="string">"here is some cash"</span> true</span><br></pre></td></tr></table></figure>
-<p>从下图可以看到，下次区块产生的时候，交易已经被验证了：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/success.png" alt="image"></p>
-<p>从而验证钱包已经接入到私有链了，账户注册需要搭建水龙头服务，后面待续。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">比特股</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bitshares</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">钱包</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">wallet</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/13/wallet/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Blog_Markdown/bitshares/比特股私有链环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -385,13 +276,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/12/undefined/">比特股私有链环境搭建</a>
+      <a class="article-title" href="/2018/02/13/bitshares/">比特股私有链环境搭建</a>
     </h1>
   
 
         
-        <a href="/2018/02/12/undefined/" class="archive-article-date">
-  	<time datetime="2018-02-12T09:45:41.442Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-12</time>
+        <a href="/2018/02/13/bitshares/" class="archive-article-date">
+  	<time datetime="2018-02-13T03:11:07.392Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
 </a>
         
       </header>
@@ -477,6 +368,10 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">比特股</a>
         		</li>
       		 
@@ -495,7 +390,124 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/12/undefined/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/02/13/bitshares/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Blog_Markdown/bitshares/比特股Web钱包搭建以及接入到私有链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/13/wallet/">比特股Web钱包搭建以及接入到私有链</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/13/wallet/" class="archive-article-date">
+  	<time datetime="2018-02-13T03:11:00.932Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别</p>
+<h1 id="1-依赖环境配置"><a href="#1-依赖环境配置" class="headerlink" title="1.依赖环境配置"></a>1.依赖环境配置</h1><p>BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令<br>安装NVM以及V6:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/creationix/</span>nvm<span class="regexp">/v0.30.2/i</span>nstall.sh | bash</span><br><span class="line">nvm install v6</span><br></pre></td></tr></table></figure>
+<p>切换到v6:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="keyword">use</span> v6</span><br></pre></td></tr></table></figure>
+<p>这个查看node是否已经切换到V6：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span> </span><br><span class="line">v6.<span class="number">12.3</span></span><br></pre></td></tr></table></figure>
+<p>本地切换只针对当前命令行窗口有效，新打开命令行，需要重新切换v6</p>
+<h1 id="2-代码下载及编译"><a href="#2-代码下载及编译" class="headerlink" title="2.代码下载及编译"></a>2.代码下载及编译</h1><h2 id="获取项目源代码"><a href="#获取项目源代码" class="headerlink" title="获取项目源代码"></a>获取项目源代码</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/bitshares/bitshares-ui.git</span><br><span class="line">cd bitshares-ui</span><br></pre></td></tr></table></figure>
+<h2 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<h2 id="编译及启动服务器"><a href="#编译及启动服务器" class="headerlink" title="编译及启动服务器"></a>编译及启动服务器</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
+<p>成功的话，会看到如下提示：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">webpack:</span> Compiled successfully.</span><br></pre></td></tr></table></figure>
+<p>此时打开浏览器输入如下地址就可以看到web钱包已经运行起来：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:8080</span></span><br></pre></td></tr></table></figure>
+<p>默认接入的比特股公有链，这个和比特股的官方钱包是一样的，它是一个钱包同时是一个交易所。<br>目前的比特股交易所都是通过这种方式搭建的，主要用来上线一些数字货币以及通过注册账户获取账户的交易手续费来盈利，大致的步骤如下：</p>
+<ul>
+<li>搭建见证人节点</li>
+<li>搭建比特股钱包</li>
+<li>搭建水龙头服务</li>
+</ul>
+<p>具体手续费的分配比例与比特股的账户引荐人制度有关系，以后在具体阐述。</p>
+<h1 id="3-钱包接入到私有链"><a href="#3-钱包接入到私有链" class="headerlink" title="3.钱包接入到私有链"></a>3.钱包接入到私有链</h1><p>上述步奏已经完成了比特股钱包的搭建，并接入到公有链中，那么如何将钱包接入的自己搭建的私有链中呢，其实很简单，在当前打开的钱包中点击Settings-&gt;Access 点击Add node,如下图所示：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png" alt="image"></p>
+<p>添加完成之后选中新建的节点点击active,即激活使用本地节点了，如下图所显示：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/save_node.png" alt="image"></p>
+<p>点击Exlpore,看以看到本地节点生成的区块，可以通过cli-walletz执行转账，验证区块是否将建议打包，可以多转几次：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unlocked <span class="meta">&gt;&gt;&gt; </span>transfer nathan alpha <span class="number">2</span> BTS <span class="string">"here is some cash"</span> true</span><br></pre></td></tr></table></figure>
+<p>从下图可以看到，下次区块产生的时候，交易已经被验证了：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/success.png" alt="image"></p>
+<p>从而验证钱包已经接入到私有链了，账户注册需要搭建水龙头服务，后面待续。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">比特股</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bitshares</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">钱包</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">wallet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/13/wallet/">展开全文 >></a>
         </p>
       
 
@@ -638,11 +650,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">比特股</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">bitshares</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">私有连</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,10 +675,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">私有连</a>
               </li>
             
             <div class="clearfix"></div>
