@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//wangmaodong.cn">
-  <title>比特股私有链环境搭建 | Leon的博客</title>
+  <title>Archives: 2017/2 | Leon的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="官方推荐使用ubuntu16.04版本,参考官方wiki:https://github.com/bitshares/bitshares-core/wiki/BUILD_UBUNTU 1.安装编译依赖的相关库12sudo apt-get updatesudo apt-get install autoconf cmake git libboost-all-dev libssl-dev g++ libc">
-<meta name="keywords" content="区块链,比特股,bitshares,私有连">
-<meta property="og:type" content="article">
-<meta property="og:title" content="比特股私有链环境搭建">
-<meta property="og:url" content="//wangmaodong.cn/2018/02/13/bitshares/index.html">
+  <meta name="description" content="每天努力一点点">
+<meta name="keywords" content="Leon的博客，区块链">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Leon的博客">
+<meta property="og:url" content="//wangmaodong.cn/archives/2017/02/index.html">
 <meta property="og:site_name" content="Leon的博客">
-<meta property="og:description" content="官方推荐使用ubuntu16.04版本,参考官方wiki:https://github.com/bitshares/bitshares-core/wiki/BUILD_UBUNTU 1.安装编译依赖的相关库12sudo apt-get updatesudo apt-get install autoconf cmake git libboost-all-dev libssl-dev g++ libc">
-<meta property="og:updated_time" content="2018-02-13T03:28:56.000Z">
+<meta property="og:description" content="每天努力一点点">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="比特股私有链环境搭建">
-<meta name="twitter:description" content="官方推荐使用ubuntu16.04版本,参考官方wiki:https://github.com/bitshares/bitshares-core/wiki/BUILD_UBUNTU 1.安装编译依赖的相关库12sudo apt-get updatesudo apt-get install autoconf cmake git libboost-all-dev libssl-dev g++ libc">
+<meta name="twitter:title" content="Leon的博客">
+<meta name="twitter:description" content="每天努力一点点">
   
     <link rel="alternative" href="/atom.xml" title="Leon的博客" type="application/atom+xml">
   
@@ -164,132 +163,36 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Blog_Markdown/bitshares/比特股私有链环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      比特股私有链环境搭建
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/02/13/eth/" class="archive-article-date">
+  	<time datetime="2017-02-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/02/13/eth/">以太坊资源整理</a>
     </h1>
   
 
-        
-        <a href="/2018/02/13/bitshares/" class="archive-article-date">
-  	<time datetime="2018-02-13T03:28:56.029Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>官方推荐使用ubuntu16.04版本,参考官方wiki:<a href="https://github.com/bitshares/bitshares-core/wiki/BUILD_UBUNTU" target="_blank" rel="noopener">https://github.com/bitshares/bitshares-core/wiki/BUILD_UBUNTU</a></p>
-<h2 id="1-安装编译依赖的相关库"><a href="#1-安装编译依赖的相关库" class="headerlink" title="1.安装编译依赖的相关库"></a>1.安装编译依赖的相关库</h2><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install autoconf cmake git libboost-<span class="built_in">all</span>-<span class="built_in">dev</span> libssl-<span class="built_in">dev</span> g++ libcurl4-openssl-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="2-下载bitshares源代码编译"><a href="#2-下载bitshares源代码编译" class="headerlink" title="2.下载bitshares源代码编译"></a>2.下载bitshares源代码编译</h2><p>源代码下与编译见如下代码所示</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/bitshares/bitshares-core.git</span><br><span class="line"><span class="keyword">cd</span> bitshares-core</span><br><span class="line">git checkout</span><br><span class="line">git submodule <span class="keyword">update</span> --init --recursive</span><br><span class="line">cmake -DBOOST_ROOT=<span class="string">"$BOOST_ROOT"</span> -DCMAKE_BUILD_TYPE=Release .</span><br><span class="line"><span class="keyword">make</span> -j4</span><br></pre></td></tr></table></figure>
-<p>编译完成后，会生成见证节点程序(programs/witness_node/witness_node) 和钱包程序(programs/cli_wallet/cli_wallet)<br>为方便使用可以通过创建对应应用程序的链接：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s programs<span class="regexp">/witness_node/</span>witness_node <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>witness_node</span><br><span class="line"></span><br><span class="line">ln -s programs<span class="regexp">/cli_wallet/</span>cli_wallet  <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>cli_wallet</span><br></pre></td></tr></table></figure>
-<p>当然也可以编译见证节点和钱包节点：<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> witness_node cli_wallet</span><br></pre></td></tr></table></figure></p>
-<p>注：Bitshare依赖openSSL 1.0.x,如果版本在这个之上调整到对应的版本</p>
-<h2 id="3-部署单机私有网络"><a href="#3-部署单机私有网络" class="headerlink" title="3.部署单机私有网络"></a>3.部署单机私有网络</h2><p>创世文件定义了网络的初始状态</p>
-<h3 id="默认创世文件"><a href="#默认创世文件" class="headerlink" title="默认创世文件"></a>默认创世文件</h3><p>石墨烯代码库有一个默认的创世区块，包含所有证人，委员会成员和基金以及一个名为nathan的帐户，它从下面私钥获得：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span>KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3</span><br></pre></td></tr></table></figure>
-<h3 id="定制创世文件"><a href="#定制创世文件" class="headerlink" title="定制创世文件"></a>定制创世文件</h3><p>  运行以下命令创建一个创世文件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> mkdir Test</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> Test</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> witness_node --create-genesis-json my-genesis.json</span></span><br></pre></td></tr></table></figure>
-<p>在Test目录里会生成my-genesis.json文件和witness_node_data_dir目录，可以同修改my-genesis.json配置来定制网络初始状态</p>
-<p>主要可以定制以下内容：</p>
-<ul>
-<li>创世账户、名字以及公钥</li>
-<li>资产和初始分配（包括核心资产）</li>
-<li>区块链的初始参数（包括费用）</li>
-<li>初始见证人的账户密钥（可以是任何账户）</li>
-</ul>
-<h3 id="起动见证人节点"><a href="#起动见证人节点" class="headerlink" title="起动见证人节点"></a>起动见证人节点</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">witness_node</span> --<span class="meta">data</span>-dir <span class="meta">data</span> --genesis-json my-genesis.json</span><br></pre></td></tr></table></figure>
-<p>会出现一段Message,可以在Message的最下方看到ChainID,如下所示：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2900598ms</span> th_a       main<span class="selector-class">.cpp</span>:<span class="number">246</span>                  main                 ] Started BitShares node on <span class="selector-tag">a</span> chain with <span class="number">0</span> blocks.</span><br><span class="line"><span class="number">2900598ms</span> th_a       main<span class="selector-class">.cpp</span>:<span class="number">247</span>                  main                 ] Chain ID is e6e736cc89c25e5a9f31550e14d7cff3d5900ca9296d6f3ed4546be2</span><br></pre></td></tr></table></figure>
-<p>可以看到ChainId:<br><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e<span class="number">6e736</span><span class="keyword">cc</span><span class="number">89</span><span class="keyword">c</span><span class="number">25e5</span>a<span class="number">9</span>f<span class="number">31550e14</span>d<span class="number">7</span>cff<span class="number">3</span>d<span class="number">5900</span>ca<span class="number">9296</span>d<span class="number">6</span>f<span class="number">3</span>ed<span class="number">4546</span>be<span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<p>同时会生成一个Data目录，在Data会生成一个config.ini,可以通过修改Config.ini来修改见证节点的配置信息。</p>
-<p>有一下两种方式来启动见证人节点：</p>
-<h3 id="命令行参数的方式"><a href="#命令行参数的方式" class="headerlink" title="命令行参数的方式"></a>命令行参数的方式</h3><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">witness_node </span><span class="built_in">--rpc-endpoint</span> <span class="string">"127.0.0.1:8090"</span> <span class="built_in">--enable-stale-production</span> <span class="built_in">--data-dir</span> <span class="string">data </span><span class="built_in">--seed-nodes</span> <span class="string">"[]"</span> <span class="built_in">--genesis-json</span> <span class="string">"my-genesis.json"</span></span><br></pre></td></tr></table></figure>
-<h3 id="修改config-init配置文件的方式"><a href="#修改config-init配置文件的方式" class="headerlink" title="修改config.init配置文件的方式"></a>修改config.init配置文件的方式</h3><p>打开data/conig.init文件修改对应的参数：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">rpc-endpoint</span> = <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">11011</span></span><br><span class="line"><span class="attr">genesis-json</span> = my-genesis.json</span><br><span class="line"><span class="attr">enable-stale-production</span> = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>增家如下节点，不知道测试环境增加多个为啥会出问题:</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">witness-id</span> = <span class="string">"1.6.1"</span></span><br></pre></td></tr></table></figure>
-<p>上面的列表授权见证人节点代表列出的证人id产生块。 通常每个见证人都在不同的节点上，但为了这个私人测试网的目的，我们将从所有在单个节点上签名块的目击者开始。 在config.ini文件中已经提供了所有这些证人ID（需要签名块）的私钥：<br>修改成功后，运行如下命令：</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">witness_node</span> --<span class="meta">data</span>-dir <span class="meta">data</span></span><br></pre></td></tr></table></figure>
-<p>运行成功的话会出现如下信息：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2718639<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">application</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:206</span>           <span class="selector-tag">reset_p2p_node</span>       ] <span class="selector-tag">Configured</span> <span class="selector-tag">p2p</span> <span class="selector-tag">node</span> <span class="selector-tag">to</span> <span class="selector-tag">listen</span> <span class="selector-tag">on</span> 0<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-pseudo">:45531</span></span><br><span class="line">2718642<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">application</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:281</span>           <span class="selector-tag">reset_websocket_serv</span> ] <span class="selector-tag">Configured</span> <span class="selector-tag">websocket</span> <span class="selector-tag">rpc</span> <span class="selector-tag">to</span> <span class="selector-tag">listen</span> <span class="selector-tag">on</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:11011</span></span><br><span class="line">2718643<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">witness</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:122</span>               <span class="selector-tag">plugin_startup</span>       ] <span class="selector-tag">witness</span> <span class="selector-tag">plugin</span>:  <span class="selector-tag">plugin_startup</span>() <span class="selector-tag">begin</span></span><br><span class="line">2718643<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">witness</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:127</span>               <span class="selector-tag">plugin_startup</span>       ] <span class="selector-tag">Launching</span> <span class="selector-tag">block</span> <span class="selector-tag">production</span> <span class="selector-tag">for</span> 1 <span class="selector-tag">witnesses</span>.</span><br><span class="line">2718643<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">witness</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:138</span>               <span class="selector-tag">plugin_startup</span>       ] <span class="selector-tag">witness</span> <span class="selector-tag">plugin</span>:  <span class="selector-tag">plugin_startup</span>() <span class="selector-tag">end</span></span><br><span class="line">2718643<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">main</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:246</span>                  <span class="selector-tag">main</span>                 ] <span class="selector-tag">Started</span> <span class="selector-tag">BitShares</span> <span class="selector-tag">node</span> <span class="selector-tag">on</span> <span class="selector-tag">a</span> <span class="selector-tag">chain</span> <span class="selector-tag">with</span> 25 <span class="selector-tag">blocks</span>.</span><br><span class="line">2718643<span class="selector-tag">ms</span> <span class="selector-tag">th_a</span>       <span class="selector-tag">main</span><span class="selector-class">.cpp</span><span class="selector-pseudo">:247</span>                  <span class="selector-tag">main</span>                 ] <span class="selector-tag">Chain</span> <span class="selector-tag">ID</span> <span class="selector-tag">is</span> 7<span class="selector-tag">be1c10cbe48776d5c52ac2b2da8e259533fd9acff44e943d9efe69115c4bfa5</span></span><br></pre></td></tr></table></figure>
-<h2 id="４．命令行钱包的使用"><a href="#４．命令行钱包的使用" class="headerlink" title="４．命令行钱包的使用"></a>４．命令行钱包的使用</h2><p>再开一个命令行窗口，运行如下命令，chain-id需要换成对应生成的chainid</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cli_wallet <span class="params">--wallet-file=my-wallet</span>.json <span class="params">--chain-id</span> 7be1c10cbe48776d5c52ac2b2da8e259533fd9acff44e943d9efe69115c4bfa5　 <span class="params">--server-rpc-endpoint=ws</span>:<span class="string">//127.0.0.1</span><span class="function">:11011</span></span><br></pre></td></tr></table></figure>
-<h3 id="创建钱包密码"><a href="#创建钱包密码" class="headerlink" title="创建钱包密码"></a>创建钱包密码</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new <span class="meta">&gt;&gt;&gt; </span>set_password <span class="number">1111</span></span><br><span class="line">set_password <span class="number">1111</span></span><br><span class="line">null</span><br><span class="line">locked <span class="meta">&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="解锁新创建的钱包"><a href="#解锁新创建的钱包" class="headerlink" title="解锁新创建的钱包"></a>解锁新创建的钱包</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">locked <span class="meta">&gt;&gt;&gt; </span>unlock <span class="number">1111</span></span><br><span class="line">unlock <span class="number">1111</span></span><br><span class="line">null</span><br><span class="line">unlocked <span class="meta">&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在石墨烯中，余额包含在账户中。 要将一个账户导入钱包，只需要知道其名称和私钥。 现在我们将使用import_key命令将一个名为nathan的帐户导入到钱包中：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">unlocked &gt;&gt;&gt; import_key nathan <span class="number">5</span>KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3</span><br><span class="line">import_key nathan <span class="number">5</span>KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3</span><br><span class="line"><span class="number">3343864ms</span> th_a       wallet<span class="selector-class">.cpp</span>:<span class="number">788</span>                save_wallet_file     ] saving wallet to file my-wallet.json</span><br><span class="line"><span class="number">3343865ms</span> th_a       wallet<span class="selector-class">.cpp</span>:<span class="number">464</span>                copy_wallet_file     ] backing up wallet my-wallet<span class="selector-class">.json</span> to after-import-key-<span class="number">9407629</span>b.wallet</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>请注意，nathan恰好是在起源文件中定义的帐户名称。 如果您在创建my-genesies.json文件之后编辑了自己的文件，则可以在其中添加一个不同的名称。 另请注意，5KQwrPbwdL … P79zkvFD3是在config.ini文件中定义的私钥。</p>
-</blockquote>
-<p>现在我们将私钥导入到钱包中，但是仍然没有与之相关的资金。 资金存储在创世blance对象中。 这些资金可以使用import_balance命令免费索取：</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">unlocked &gt;&gt;&gt; import_balance nathan [<span class="string">"5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"</span>] true</span><br><span class="line">import_balance nathan [<span class="string">"5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"</span>] true</span><br><span class="line"><span class="number">3518604</span>ms th_a       wallet.cpp:<span class="number">3717</span>               import_balance       ] balances: [&#123;<span class="string">"id"</span>:<span class="string">"1.15.0"</span>,<span class="string">"owner"</span>:<span class="string">"BTSFAbAx7yuxt725qSZvfwWqkdCwp9ZnUama"</span>,<span class="string">"balance"</span>:&#123;<span class="string">"amount"</span>:<span class="string">"1000000000000000"</span>,<span class="string">"asset_id"</span>:<span class="string">"1.3.0"</span>&#125;,<span class="string">"last_claim_date"</span>:<span class="string">"1970-01-01T00:00:00"</span>&#125;] </span><br><span class="line">[&#123;</span><br><span class="line">    <span class="string">"ref_block_num"</span>: <span class="number">40</span>,</span><br><span class="line">    <span class="string">"ref_block_prefix"</span>: <span class="number">2829793676</span>,</span><br><span class="line">    <span class="string">"expiration"</span>: <span class="string">"2017-12-27T02:58:50"</span>,</span><br><span class="line">    <span class="string">"operations"</span>: [[</span><br><span class="line">        <span class="number">37</span>,&#123;</span><br><span class="line">          <span class="string">"fee"</span>: &#123;</span><br><span class="line">            <span class="string">"amount"</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="string">"asset_id"</span>: <span class="string">"1.3.0"</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">"deposit_to_account"</span>: <span class="string">"1.2.17"</span>,</span><br><span class="line">          <span class="string">"balance_to_claim"</span>: <span class="string">"1.15.0"</span>,</span><br><span class="line">          <span class="string">"balance_owner_key"</span>: <span class="string">"BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV"</span>,</span><br><span class="line">          <span class="string">"total_claimed"</span>: &#123;</span><br><span class="line">            <span class="string">"amount"</span>: <span class="string">"1000000000000000"</span>,</span><br><span class="line">            <span class="string">"asset_id"</span>: <span class="string">"1.3.0"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"extensions"</span>: [],</span><br><span class="line">    <span class="string">"signatures"</span>: [</span><br><span class="line">      <span class="string">"20203418aba7124965965018f43442e238d9752e182ab5f9233db671a21738f34f42578d85de8ed1e49beeb1dc53a728e81148ab76252341b39b423a58d973ce57"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="查看账户信息"><a href="#查看账户信息" class="headerlink" title="查看账户信息"></a>查看账户信息</h3><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">unlocked &gt;&gt;&gt; get_account nathan</span><br><span class="line">get_account nathan</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"id"</span>: <span class="string">"1.2.17"</span>,</span><br><span class="line">  <span class="string">"membership_expiration_date"</span>: <span class="string">"1970-01-01T00:00:00"</span>,</span><br><span class="line">  <span class="string">"registrar"</span>: <span class="string">"1.2.4"</span>,</span><br><span class="line">  <span class="string">"referrer"</span>: <span class="string">"1.2.0"</span>,</span><br><span class="line">  <span class="string">"lifetime_referrer"</span>: <span class="string">"1.2.0"</span>,</span><br><span class="line">  <span class="string">"network_fee_percentage"</span>: <span class="number">2000</span>,</span><br><span class="line">  <span class="string">"lifetime_referrer_fee_percentage"</span>: <span class="number">3000</span>,</span><br><span class="line">  <span class="string">"referrer_rewards_percentage"</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"nathan"</span>,</span><br><span class="line">  <span class="string">"owner"</span>: &#123;</span><br><span class="line">    <span class="string">"weight_threshold"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"account_auths"</span>: [],</span><br><span class="line">    <span class="string">"key_auths"</span>: [[</span><br><span class="line">        <span class="string">"BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV"</span>,</span><br><span class="line">        <span class="number">1</span></span><br><span class="line">      ]</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"address_auths"</span>: []</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"active"</span>: &#123;</span><br><span class="line">    <span class="string">"weight_threshold"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"account_auths"</span>: [],</span><br><span class="line">    <span class="string">"key_auths"</span>: [[</span><br><span class="line">        <span class="string">"BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV"</span>,</span><br><span class="line">        <span class="number">1</span></span><br><span class="line">      ]</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"address_auths"</span>: []</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"options"</span>: &#123;</span><br><span class="line">    <span class="string">"memo_key"</span>: <span class="string">"BTS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV"</span>,</span><br><span class="line">    <span class="string">"voting_account"</span>: <span class="string">"1.2.5"</span>,</span><br><span class="line">    <span class="string">"num_witness"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"num_committee"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"votes"</span>: [],</span><br><span class="line">    <span class="string">"extensions"</span>: []</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"statistics"</span>: <span class="string">"2.6.17"</span>,</span><br><span class="line">  <span class="string">"whitelisting_accounts"</span>: [],</span><br><span class="line">  <span class="string">"blacklisting_accounts"</span>: [],</span><br><span class="line">  <span class="string">"whitelisted_accounts"</span>: [],</span><br><span class="line">  <span class="string">"blacklisted_accounts"</span>: [],</span><br><span class="line">  <span class="string">"owner_special_authority"</span>: [</span><br><span class="line">    <span class="number">0</span>,&#123;&#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"active_special_authority"</span>: [</span><br><span class="line">    <span class="number">0</span>,&#123;&#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"top_n_control_flags"</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="查看账户余额"><a href="#查看账户余额" class="headerlink" title="查看账户余额"></a>查看账户余额</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unlocked <span class="meta">&gt;&gt;&gt; </span>list_account_balances nathan</span><br><span class="line">list_account_balances nathan</span><br><span class="line"><span class="number">10000000000</span> BTS</span><br></pre></td></tr></table></figure>
-<h3 id="创建一个新账户"><a href="#创建一个新账户" class="headerlink" title="创建一个新账户"></a>创建一个新账户</h3><p>现在我们将创建另一个帐户（名为alpha），以便我们可以在nathan和alpha之间来回转移资金。</p>
-<p>创建一个新账户总是通过使用一个现有账户来完成 - 我们需要这个账户，因为有人（即注册商）必须为注册费用提供资金。 此外，注册服务商账户还要求具有终身成员（LTM）身份。 因此，我们需要将帐户nathan升级为LTM，然后才能继续创建其他帐户。 要升级到LTM，请使用upgrade_account命令：</p>
-<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">unlocked &gt;&gt;&gt; upgrade_account nathan true</span><br><span class="line">upgrade_account nathan true</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"ref_block_num"</span>: <span class="number">47</span>,</span><br><span class="line">  <span class="string">"ref_block_prefix"</span>: <span class="number">821762446</span>,</span><br><span class="line">  <span class="string">"expiration"</span>: <span class="string">"2017-12-27T03:05:05"</span>,</span><br><span class="line">  <span class="string">"operations"</span>: [[</span><br><span class="line">      <span class="number">8</span>,&#123;</span><br><span class="line">        <span class="string">"fee"</span>: &#123;</span><br><span class="line">          <span class="string">"amount"</span>: <span class="number">1000000000</span>,</span><br><span class="line">          <span class="string">"asset_id"</span>: <span class="string">"1.3.0"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"account_to_upgrade"</span>: <span class="string">"1.2.17"</span>,</span><br><span class="line">        <span class="string">"upgrade_to_lifetime_member"</span>: true,</span><br><span class="line">        <span class="string">"extensions"</span>: []</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"extensions"</span>: [],</span><br><span class="line">  <span class="string">"signatures"</span>: [</span><br><span class="line">    <span class="string">"1f7f7974b17319ed1e9bf92ea6392261c8d5f1b40650828b762e55a6d5c8a76f8b1991c06ba9e33918510347c926c238bef2cad2751095d9e0b9adf1d6c4e1f4f0"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>由于已知的缓存问题，您需要在这个阶段重新启动CLI，否则它将不知道nathan已经升级了。按Ctrl-C停止命令启动它再次使用相同的命令之前，即:<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cli_wallet <span class="params">--wallet-file=my-wallet</span>.json <span class="params">--chain-id</span> 7be1c10cbe48776d5c52ac2b2da8e259533fd9acff44e943d9efe69115c4bfa5　 <span class="params">--server-rpc-endpoint=ws</span>:<span class="string">//127.0.0.1</span><span class="function">:11011</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>运行如下命令，看是否升级成功：</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">get_account</span> nathan</span><br></pre></td></tr></table></figure>
-<p>可以看到”membership_expiration_date”已经从”1970-01-01T00:00:00” 变成了 “1969-12-31T23:59:59”，意味着升级成功了</p>
-<p>现在可以使用nathan作为注册商注册一个帐户。 但首先我们需要掌握新账户的公钥。 通过使用suggest_brain_key命令来完成它：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">locked <span class="meta">&gt;&gt;&gt; </span>suggest_brain_key</span><br><span class="line">suggest_brain_key</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"brain_priv_key"</span>: <span class="string">"BECURSE VALGOID DEFROCK GODKIN SWITHER WORTH SUIFORM DAKER IPSEAND UPPERER PSALM UNCAST DOTTILY BEFRIZ SCUT BRONC"</span>,</span><br><span class="line">  <span class="string">"wif_priv_key"</span>: <span class="string">"5KZmzKmP8869Tw26nBTtYzGM4vW55mH9R9ZTeK9wPiTeX495rbn"</span>,</span><br><span class="line">  <span class="string">"pub_key"</span>: <span class="string">"BTS7KuKh66CdWb1pTRg414ocVXGDQLnrRtJDd4srevt6MRmQPd8Gg"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过create_account_with_brain_key命令注册帐户，并自动导入相应的私钥。</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unlocked <span class="meta">&gt;&gt;&gt; </span>create_account_with_brain_key <span class="string">"BECURSE VALGOID DEFROCK GODKIN SWITHER WORTH SUIFORM DAKER IPSEAND UPPERER PSALM UNCAST DOTTILY BEFRIZ SCUT BRONC"</span> alpha nathan nathan true</span><br></pre></td></tr></table></figure>
-<h3 id="转账"><a href="#转账" class="headerlink" title="转账"></a>转账</h3><p>执行如下命令：</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transfer</span> nathan alpha <span class="number">2000000000</span> BTS <span class="string">"here is some cash"</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h3 id="查看alpha账户余额："><a href="#查看alpha账户余额：" class="headerlink" title="查看alpha账户余额："></a>查看alpha账户余额：</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unlocked <span class="meta">&gt;&gt;&gt; </span>list_account_balances alpha</span><br><span class="line">list_account_balances alpha</span><br><span class="line"><span class="number">2000000000</span> BTS</span><br></pre></td></tr></table></figure>
-<p>转账成功</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果感觉文章对您有帮助，就送两个糖果吧<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/zhifubao.JPG">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/weixin.JPG">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -299,145 +202,25 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">比特股</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bitshares</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">私有连</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">以太坊</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://wangmaodong.cn/2018/02/13/bitshares/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/02/13/eth/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          以太坊资源整理
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/02/13/wallet/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">比特股Web钱包搭建以及接入到私有链</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "//wangmaodong.cn/2018/02/13/bitshares/",
-  owner: 'wangmaodong',
-  repo: 'wangmaodong.github.io',
-  oauth: {
-    client_id: '74a97785fb29b255e34d',
-    client_secret: '6d7b704acc65794d03aaa5a257112bb5d7d407de',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -459,8 +242,8 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -554,6 +337,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">比特股</a>
               </li>
              
@@ -571,10 +358,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">私有连</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
               </li>
             
             <div class="clearfix"></div>
