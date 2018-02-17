@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//wangmaodong.cn">
-  <title>Tag: 私有连 | Leon的博客</title>
+  <title>比特股Web钱包搭建以及接入到私有链 | Leon的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每天努力一点点">
-<meta name="keywords" content="Leon的博客，区块链">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leon的博客">
-<meta property="og:url" content="//wangmaodong.cn/tags/私有连/index.html">
+  <meta name="description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别">
+<meta name="keywords" content="区块链,比特股,bitshares,钱包,wallet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="比特股Web钱包搭建以及接入到私有链">
+<meta property="og:url" content="//wangmaodong.cn/2018/01/22/wallet/index.html">
 <meta property="og:site_name" content="Leon的博客">
-<meta property="og:description" content="每天努力一点点">
+<meta property="og:description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别">
+<meta property="og:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/save_node.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/success.png">
+<meta property="og:updated_time" content="2018-02-17T02:49:17.035Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leon的博客">
-<meta name="twitter:description" content="每天努力一点点">
+<meta name="twitter:title" content="比特股Web钱包搭建以及接入到私有链">
+<meta name="twitter:description" content="BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png">
   
     <link rel="alternative" href="/atom.xml" title="Leon的博客" type="application/atom+xml">
   
@@ -163,36 +168,94 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Blog_Markdown/bitshares/比特股Web钱包搭建以及接入到私有链" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/15/bitshares/" class="archive-article-date">
-  	<time datetime="2018-01-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/15/bitshares/">比特股私有链环境搭建</a>
+    <h1 class="article-title" itemprop="name">
+      比特股Web钱包搭建以及接入到私有链
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/22/wallet/" class="archive-article-date">
+  	<time datetime="2018-01-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>BitShares-UI是比特股轻钱包，BitShares API 由 witness_node 程序提供。比特股钱包有两种模式：钱包模式和账号模式，后面再具体阐述这两种模式的区别</p>
+<a id="more"></a>
+<h1 id="1-依赖环境配置"><a href="#1-依赖环境配置" class="headerlink" title="1.依赖环境配置"></a>1.依赖环境配置</h1><p>BitShares-UI 依赖于 Node.js v6 以上版本，通过nvm可以很方便的管理node版本，执行如下命令<br>安装NVM以及V6:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/creationix/</span>nvm<span class="regexp">/v0.30.2/i</span>nstall.sh | bash</span><br><span class="line">nvm install v6</span><br></pre></td></tr></table></figure>
+<p>切换到v6:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="keyword">use</span> v6</span><br></pre></td></tr></table></figure>
+<p>这个查看node是否已经切换到V6：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">-v</span> </span><br><span class="line">v6.<span class="number">12.3</span></span><br></pre></td></tr></table></figure>
+<p>本地切换只针对当前命令行窗口有效，新打开命令行，需要重新切换v6</p>
+<h1 id="2-代码下载及编译"><a href="#2-代码下载及编译" class="headerlink" title="2.代码下载及编译"></a>2.代码下载及编译</h1><h2 id="获取项目源代码"><a href="#获取项目源代码" class="headerlink" title="获取项目源代码"></a>获取项目源代码</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/bitshares/bitshares-ui.git</span><br><span class="line">cd bitshares-ui</span><br></pre></td></tr></table></figure>
+<h2 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<h2 id="编译及启动服务器"><a href="#编译及启动服务器" class="headerlink" title="编译及启动服务器"></a>编译及启动服务器</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
+<p>成功的话，会看到如下提示：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">webpack:</span> Compiled successfully.</span><br></pre></td></tr></table></figure>
+<p>此时打开浏览器输入如下地址就可以看到web钱包已经运行起来：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:8080</span></span><br></pre></td></tr></table></figure>
+<p>默认接入的比特股公有链，这个和比特股的官方钱包是一样的，它是一个钱包同时是一个交易所。<br>目前的比特股交易所都是通过这种方式搭建的，主要用来上线一些数字货币以及通过注册账户获取账户的交易手续费来盈利，大致的步骤如下：</p>
+<ul>
+<li>搭建见证人节点</li>
+<li>搭建比特股钱包</li>
+<li>搭建水龙头服务</li>
+</ul>
+<p>具体手续费的分配比例与比特股的账户引荐人制度有关系，以后在具体阐述。</p>
+<h1 id="3-钱包接入到私有链"><a href="#3-钱包接入到私有链" class="headerlink" title="3.钱包接入到私有链"></a>3.钱包接入到私有链</h1><p>上述步奏已经完成了比特股钱包的搭建，并接入到公有链中，那么如何将钱包接入的自己搭建的私有链中呢，其实很简单，在当前打开的钱包中点击Settings-&gt;Access 点击Add node,如下图所示：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/add_node.png" alt="image"></p>
+<p>添加完成之后选中新建的节点点击active,即激活使用本地节点了，如下图所显示：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/save_node.png" alt="image"></p>
+<p>点击Exlpore,看以看到本地节点生成的区块，可以通过cli-walletz执行转账，验证区块是否将建议打包，可以多转几次：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unlocked <span class="meta">&gt;&gt;&gt; </span>transfer nathan alpha <span class="number">2</span> BTS <span class="string">"here is some cash"</span> true</span><br></pre></td></tr></table></figure>
+<p>从下图可以看到，下次区块产生的时候，交易已经被验证了：<br><img src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/success.png" alt="image"></p>
+<p>从而验证钱包已经接入到私有链了，账户注册需要搭建水龙头服务，后面待续。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果感觉文章对您有帮助，就送两个糖果吧<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -210,25 +273,141 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">私有连</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">钱包</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">wallet</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangmaodong.cn/2018/01/22/wallet/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/02/13/eth/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          以太坊资源整理
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/01/15/bitshares/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">比特股私有链环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//wangmaodong.cn/2018/01/22/wallet/",
+  owner: 'wangmaodong',
+  repo: 'wangmaodong.github.io',
+  oauth: {
+    client_id: '74a97785fb29b255e34d',
+    client_secret: '6d7b704acc65794d03aaa5a257112bb5d7d407de',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -250,9 +429,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
