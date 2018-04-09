@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//wangmaodong.cn">
-  <title>Tag: 太坊 | Leon的博客</title>
+  <title>Ethermint私有连搭建-单机节点启动.md | Leon的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每天努力一点点">
-<meta name="keywords" content="Leon的博客，区块链">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leon的博客">
-<meta property="og:url" content="//wangmaodong.cn/tags/太坊/index.html">
+  <meta name="description" content="前言本文主要利用ethermint去启动一个节点，并在本节点是去执行交易和挖矿以及部署一个简单的合约，从实际的部署和使用中去了解ethermint的使用 Ethermint安装运行Ethermint需要安装ethermint和tendermint,主要有以下两种基本方式安装  二进制文件下载安装 源文件安装   这里不做详细阐述，会在其他篇幅中提供，后面会附上其他文章的联建  Ethermint单">
+<meta name="keywords" content="ethermint,tendetmint">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ethermint私有连搭建-单机节点启动.md">
+<meta property="og:url" content="//wangmaodong.cn/2018/04/09/ethermint,tendetmint,private_net/index.html">
 <meta property="og:site_name" content="Leon的博客">
-<meta property="og:description" content="每天努力一点点">
+<meta property="og:description" content="前言本文主要利用ethermint去启动一个节点，并在本节点是去执行交易和挖矿以及部署一个简单的合约，从实际的部署和使用中去了解ethermint的使用 Ethermint安装运行Ethermint需要安装ethermint和tendermint,主要有以下两种基本方式安装  二进制文件下载安装 源文件安装   这里不做详细阐述，会在其他篇幅中提供，后面会附上其他文章的联建  Ethermint单">
+<meta property="og:updated_time" content="2018-04-09T16:07:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leon的博客">
-<meta name="twitter:description" content="每天努力一点点">
+<meta name="twitter:title" content="Ethermint私有连搭建-单机节点启动.md">
+<meta name="twitter:description" content="前言本文主要利用ethermint去启动一个节点，并在本节点是去执行交易和挖矿以及部署一个简单的合约，从实际的部署和使用中去了解ethermint的使用 Ethermint安装运行Ethermint需要安装ethermint和tendermint,主要有以下两种基本方式安装  二进制文件下载安装 源文件安装   这里不做详细阐述，会在其他篇幅中提供，后面会附上其他文章的联建  Ethermint单">
   
     <link rel="alternative" href="/atom.xml" title="Leon的博客" type="application/atom+xml">
   
@@ -163,64 +164,265 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Blog_Markdown/ethermint/Ethermint私有连搭建-单机节点启动" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/06/eth/" class="archive-article-date">
-  	<time datetime="2018-04-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/06/eth/">基于以太坊cpp_ethereum客户端的私有链搭建</a>
+    <h1 class="article-title" itemprop="name">
+      Ethermint私有连搭建-单机节点启动.md
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/04/09/ethermint,tendetmint,private_net/" class="archive-article-date">
+  	<time datetime="2018-04-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要利用ethermint去启动一个节点，并在本节点是去执行交易和挖矿以及部署一个简单的合约，从实际的部署和使用中去了解ethermint的使用</p>
+<h2 id="Ethermint安装"><a href="#Ethermint安装" class="headerlink" title="Ethermint安装"></a>Ethermint安装</h2><p>运行Ethermint需要安装ethermint和tendermint,主要有以下两种基本方式安装</p>
+<ul>
+<li>二进制文件下载安装</li>
+<li>源文件安装</li>
+</ul>
+<blockquote>
+<p>这里不做详细阐述，会在其他篇幅中提供，后面会附上其他文章的联建</p>
+</blockquote>
+<h2 id="Ethermint单机节点启动"><a href="#Ethermint单机节点启动" class="headerlink" title="Ethermint单机节点启动"></a>Ethermint单机节点启动</h2><h3 id="初始化创始文件"><a href="#初始化创始文件" class="headerlink" title="初始化创始文件"></a>初始化创始文件</h3><p>在运行Ethermint之前需要初始化tendermint和ethermint的创世配置等信息，提供了创世账户及其默认金额，这个可以单独配置。如果是二进制文件下载安装，需要下载创世账户和创世文件下载地址<a href="https://github.com/tendermint/ethermint/tree/develop/setup。" target="_blank" rel="noopener">https://github.com/tendermint/ethermint/tree/develop/setup。</a> 如果您从源代码安装，则可以执行如下命令获得。<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tendermint init <span class="params">--home</span> <span class="string">./ethermint/tendermint</span></span><br><span class="line">ethermint <span class="params">--datadir</span> <span class="string">./ethermint</span> init</span><br></pre></td></tr></table></figure></p>
+<p>执行完毕之后可以看到在ethermint/目录下生成keystore,在ethermint/tendermint下也会生成对应的config和genesis文件，具体这些创世文件的含义以及如何配置将会花单独的篇幅进行说明。<br><a id="more"></a></p>
+<h3 id="启动Ethermint"><a href="#启动Ethermint" class="headerlink" title="启动Ethermint"></a>启动Ethermint</h3><p>要执行ethermint，我们需要启动两个进程。 第一个是用于处理P2P通信以及共识流程的tendermint，而第二个实际上是ethermint，它提供了以太坊功能。</p>
+<ul>
+<li>首先启动tendermint</li>
+<li><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">tendermint --home ./ethermint/tendermint node</span><br><span class="line"></span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">46</span>:<span class="number">48.995</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">46</span>:<span class="number">51.995</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">46</span>:<span class="number">54.996</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">46</span>:<span class="number">57.996</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">00.997</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">03.997</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">E[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">06.998</span>] abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp://<span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">46658</span>.  Retrying... module=abci-client connection=query</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">13.045</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">1</span> validTxs=<span class="number">0</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">13.047</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">1</span> txs=<span class="number">0</span> hash=DCC7B97B1EA4449F16F92D98B4C93B77642D159A33EAA65DC96C895908E2FF0C</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">14.063</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">2</span> validTxs=<span class="number">0</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">14.064</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">2</span> txs=<span class="number">0</span> hash=<span class="number">32</span>EC1A597B49BD5130C7A49066129231EEB0E52F620EA749B1F0E15037F21365</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">15.083</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">3</span> validTxs=<span class="number">0</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">15.085</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">3</span> txs=<span class="number">0</span> hash=<span class="number">5909</span>F1BE30EB4B00ACF345E17AAA00C89C7E2CDE2329C724F46B3ADC63C05090</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">16.102</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">4</span> validTxs=<span class="number">0</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">16.104</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">4</span> txs=<span class="number">0</span> hash=F44A8DEB58C768430AFACB8D35351E3E62D239F39DB797F8A280030C73F11575</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">17.121</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">5</span> validTxs=<span class="number">0</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">17.123</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">5</span> txs=<span class="number">0</span> hash=F7775DC5DEB7E41905CB4314710535C43208E3303CBAF3A5678E11FC661B4C71</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">18.139</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">6</span> validTxs=<span class="number">0</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">02</span>:<span class="number">47</span>:<span class="number">18.141</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">6</span> txs=<span class="number">0</span> hash=BB3D7113AE674C471BCB373ECF39B315F700A597FD568E0F6B667E1F5074FD47</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动ethermint </p>
+</li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">ethermint <span class="comment">--datadir ./ethermint --rpc --rpcaddr=0.0.0.0 --ws --wsaddr=0.0.0.0 --rpcapi eth,net,web3,personal,admin</span></span><br><span class="line"></span><br><span class="line">INFO [04-09|10:47:07] Starting peer-to-peer node               instance=ethermint/v1.6.7-stable/linux-amd64/go1.9.3</span><br><span class="line">INFO [04-09|10:47:07] Allocated <span class="keyword">cache</span> <span class="keyword">and</span> <span class="keyword">file</span> handles         <span class="keyword">database</span>=/home/parallels/<span class="keyword">work</span>/ethermint_chain/ethermint/ethermint/chaindata <span class="keyword">cache</span>=<span class="number">128</span> handles=<span class="number">1024</span></span><br><span class="line">WARN [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Upgrading <span class="keyword">chain</span> <span class="keyword">database</span> <span class="keyword">to</span> <span class="keyword">use</span> <span class="keyword">sequential</span> <span class="keyword">keys</span> </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Initialised <span class="keyword">chain</span> configuration          config=<span class="string">"&#123;ChainID: 15 Homestead: 0 DAO: &lt;nil&gt; DAOSupport: false EIP150: &lt;nil&gt; EIP155: 0 EIP158: 0 Metropolis: &lt;nil&gt; Engine: unknown&#125;"</span></span><br><span class="line">WARN [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Ethash used <span class="keyword">in</span> fake <span class="keyword">mode</span> </span><br><span class="line">WARN [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Upgrading db <span class="keyword">log</span> bloom bins </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] <span class="keyword">Database</span> conversion successful </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Bloom-<span class="keyword">bin</span> <span class="keyword">upgrade</span> completed              elapsed=<span class="number">93.384</span>µs</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Initialising Ethereum protocol           <span class="keyword">versions</span>=<span class="string">"[63 62]"</span> network=<span class="number">1</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Loaded most recent <span class="keyword">local</span> header          <span class="built_in">number</span>=<span class="number">0</span> <span class="keyword">hash</span>=<span class="number">2</span>b72f9…d468ac td=<span class="number">64</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Loaded most recent <span class="keyword">local</span> <span class="keyword">full</span> <span class="keyword">block</span>      <span class="built_in">number</span>=<span class="number">0</span> <span class="keyword">hash</span>=<span class="number">2</span>b72f9…d468ac td=<span class="number">64</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Loaded most recent <span class="keyword">local</span> <span class="keyword">fast</span> <span class="keyword">block</span>      <span class="built_in">number</span>=<span class="number">0</span> <span class="keyword">hash</span>=<span class="number">2</span>b72f9…d468ac td=<span class="number">64</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] <span class="keyword">Starting</span> P2P networking </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] RLPx listener up                         <span class="keyword">self</span>=<span class="string">"enode://7ffbe6a54ec88ec44cc52409cec7d60e20121a0205a8622912646c093b1ea64c39925390eb3e1c162d367aa9c355268a569e36444a537884d080e8d5a8338fc8@[::]:30303?discport=0"</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] Waiting <span class="keyword">for</span> tendermint endpoint <span class="keyword">to</span> <span class="keyword">start</span> err=<span class="string">"Post http://localhost:46657/status: dial tcp 127.0.0.1:46657: getsockopt: connection refused"</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] <span class="keyword">HTTP</span> endpoint opened: <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8545</span> </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] WebSocket endpoint opened: ws://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8546</span> </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">07</span>] IPC endpoint opened: /home/parallels/<span class="keyword">work</span>/ethermint_chain/ethermint/geth.ipc </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">09</span>] <span class="keyword">Starting</span> ABCIServer                      <span class="keyword">module</span>=abci-<span class="keyword">server</span> impl=ABCIServer</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">09</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">10</span>] Accepted a <span class="keyword">new</span> <span class="keyword">connection</span>                <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">10</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">10</span>] Accepted a <span class="keyword">new</span> <span class="keyword">connection</span>                <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">10</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">10</span>] Accepted a <span class="keyword">new</span> <span class="keyword">connection</span>                <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">10</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">13</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">419.72</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">1</span> <span class="keyword">hash</span>=dcc7b9…e2ff0c</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">14</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">342.37</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">2</span> <span class="keyword">hash</span>=<span class="number">32</span>ec1a…f21365</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">15</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">428.186</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">3</span> <span class="keyword">hash</span>=<span class="number">5909</span>f1…c05090</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">16</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">428.889</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">4</span> <span class="keyword">hash</span>=f44a8d…f11575</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">17</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">432.626</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">5</span> <span class="keyword">hash</span>=f7775d…<span class="number">1</span>b4c71</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">18</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">343.954</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">6</span> <span class="keyword">hash</span>=bb3d71…<span class="number">74</span>fd47</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">19</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">431.598</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">7</span> <span class="keyword">hash</span>=a4dbc9…<span class="number">006</span>f4e</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-09</span>|<span class="number">10</span>:<span class="number">47</span>:<span class="number">20</span>] Imported <span class="keyword">new</span> <span class="keyword">chain</span> <span class="keyword">segment</span>               blocks=<span class="number">1</span> txs=<span class="number">0</span> mgas=<span class="number">0.000</span> elapsed=<span class="number">469.884</span>µs mgasps=<span class="number">0.000</span> <span class="built_in">number</span>=<span class="number">8</span> <span class="keyword">hash</span>=<span class="number">3</span>a9f69…<span class="number">14</span>bfce</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在ethermint启动前，tendermint窗口会一直打印如下log</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abci.socketClient failed <span class="keyword">to</span> connect <span class="keyword">to</span> tcp:<span class="comment">//127.0.0.1:46658</span></span><br></pre></td></tr></table></figure>
+<p>在ethermint启动之后，可以看到tendermin和ehtermint建立的连接<br>后面看到已经有区块生成，这样一个Ethermint节点就启动了</p>
+<h2 id="与Ethermint节点交互"><a href="#与Ethermint节点交互" class="headerlink" title="与Ethermint节点交互"></a>与Ethermint节点交互</h2><p>因为ethermint是基于以太坊的，因此可以使用以太坊geth工具连接到Ethermint，执行如下命令，连接到Ethermint</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">geth attach <span class="string">http:</span><span class="comment">//localhost:8545</span></span><br><span class="line">Welcome to the Geth JavaScript console!</span><br><span class="line"></span><br><span class="line"><span class="string">instance:</span> ethermint<span class="regexp">/v1.6.7-stable/</span>linux-amd64/go1<span class="number">.9</span><span class="number">.3</span></span><br><span class="line"><span class="string">coinbase:</span> <span class="number">0x7eff122b94897ea5b0e2a9abf47b86337fafebdc</span></span><br><span class="line">at <span class="string">block:</span> <span class="number">141</span> (Mon, <span class="number">09</span> Apr <span class="number">2018</span> <span class="number">10</span>:<span class="number">49</span>:<span class="number">35</span> CST)</span><br><span class="line"><span class="symbol"> datadir:</span> <span class="regexp">/home/</span>parallels<span class="regexp">/work/</span>ethermint_chain/ethermint</span><br><span class="line"><span class="symbol"> modules:</span> <span class="string">admin:</span><span class="number">1.0</span> <span class="string">eth:</span><span class="number">1.0</span> <span class="string">net:</span><span class="number">1.0</span> <span class="string">personal:</span><span class="number">1.0</span> <span class="string">rpc:</span><span class="number">1.0</span> <span class="string">web3:</span><span class="number">1.0</span></span><br><span class="line"> &gt;</span><br></pre></td></tr></table></figure>
+<p>下面从账户操作、部署合约以及与合约交互等几个操作是如何与节点进行交互的。</p>
+<ul>
+<li>查看账户<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; eth.accounts</span><br><span class="line">[<span class="string">"0x7eff122b94897ea5b0e2a9abf47b86337fafebdc"</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>前面已经说明默认配置了一个账户，可以从./ethermint/keystore中看到：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parallels<span class="variable">@ubuntu</span><span class="symbol">:~/work/ethermint_chain/ethermint/keystore</span><span class="variable">$ </span>ls</span><br><span class="line">UTC--<span class="number">2016</span>-<span class="number">10</span>-<span class="number">21</span>T22-<span class="number">30</span>-<span class="number">03</span>.<span class="number">0717</span>87745Z--<span class="number">7</span>eff122b94897ea5b0e2a9abf47b86337fafebdc</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>查看已经产生的区块高度</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> eth.blockNumber</span></span><br><span class="line">568</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解锁账户<br>在部署合约或者发起交易前，需要先解锁账户</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> &gt; web3<span class="selector-class">.personal</span><span class="selector-class">.unlockAccount</span>(<span class="string">"0x7eff122b94897ea5b0e2a9abf47b86337fafebdc"</span>, <span class="string">"1234"</span>, <span class="number">100000</span>)</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第一个参数是账户，第二参数世密码，第三个参数是账户的保持解锁时间，单位是秒</p>
+<ul>
+<li>部署合约<br>一个简单的合约代码，主要设计的存取一个uint数据，代码如下</li>
+</ul>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pragma</span> solidity ^<span class="number">0.4</span>.0;</span><br><span class="line"> </span><br><span class="line">contract SimpleStorage &#123;</span><br><span class="line">    <span class="built_in">uint</span> storedData;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">function</span> set(<span class="built_in">uint</span> x) <span class="keyword">public</span> &#123;</span><br><span class="line">        storedData = x;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">function</span> get() <span class="keyword">public</span> constant returns (<span class="built_in">uint</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> storedData;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用Remix进行合约编译，编译完成后Contract detail有构建合约类和合约部署代码可以直接拿来用。</p>
+<ul>
+<li>部署合约</li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var simplestorageContract = web3.eth.contract([&#123;<span class="string">"constant"</span>:false,<span class="string">"inputs"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"x"</span>,<span class="string">"type"</span>:<span class="string">"uint256"</span>&#125;],<span class="string">"name"</span>:<span class="string">"set"</span>,<span class="string">"outputs"</span>:[],<span class="string">"payable"</span>:false,<span class="string">"stateMutability"</span>:<span class="string">"nonpayable"</span>,<span class="string">"type"</span>:<span class="string">"function"</span>&#125;,&#123;<span class="string">"constant"</span>:true,<span class="string">"inputs"</span>:[],<span class="string">"name"</span>:<span class="string">"get"</span>,<span class="string">"outputs"</span>:[&#123;<span class="string">"name"</span>:<span class="string">""</span>,<span class="string">"type"</span>:<span class="string">"uint256"</span>&#125;],<span class="string">"payable"</span>:false,<span class="string">"stateMutability"</span>:<span class="string">"view"</span>,<span class="string">"type"</span>:<span class="string">"function"</span>&#125;]);</span><br><span class="line"></span><br><span class="line">var simplestorage = simplestorageContract.new(</span><br><span class="line">   &#123;</span><br><span class="line">     from: web3.eth.accounts[<span class="number">0</span>], </span><br><span class="line">     data: '0x<span class="number">60606040523415</span><span class="number">6100</span>0f<span class="number">57600080</span>fd5b60d<span class="number">38061001</span>d<span class="number">6000396000</span>f<span class="number">30060606040526</span><span class="number">00436106049576</span><span class="number">000357</span>c<span class="number">01000000000000</span><span class="number">00000000000000</span><span class="number">00000000000000</span><span class="number">00000000000000</span><span class="number">00900463</span>ffffffff<span class="number">16806360</span>fe47b<span class="number">114604</span>e<span class="number">578063</span>6d4ce63c<span class="number">1460</span>6e575b<span class="number">600080</span>fd5b<span class="number">34156058576000</span>80fd5b606c<span class="number">60048080359060</span><span class="number">20019091905050</span><span class="number">609456</span>5b005b<span class="number">34156078576000</span>80fd5b607e609e565b<span class="number">60405180828152</span><span class="number">60200191505060</span><span class="number">405180910390</span>f35b<span class="number">80600081905550</span><span class="number">5056</span>5b<span class="number">60008054905090</span><span class="number">5600</span>a<span class="number">165627</span>a7a<span class="number">72305820</span>5d8a5d19a07f5b8f<span class="number">9672432432</span>fee6d<span class="number">2661</span>eb<span class="number">12010344</span>2f96b4ae5d<span class="number">8088</span>6bfd<span class="number">3002</span>9', </span><br><span class="line">     gas: '<span class="number">470000</span>0'</span><br><span class="line">   &#125;, function (e, contract)&#123;</span><br><span class="line">    console.<span class="built_in">log</span>(e, contract);</span><br><span class="line">    if (typeof contract.address !== 'undefined') &#123;</span><br><span class="line">         console.<span class="built_in">log</span>('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<p>在geth命令行窗口执行以上代码进行合约部署，会在ethermint窗口看到已经提交了一个合约<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">INFO</span> [04-09|14:31:48] Imported new chain segment               <span class="attribute">blocks</span>=1 <span class="attribute">txs</span>=0 <span class="attribute">mgas</span>=0.000 <span class="attribute">elapsed</span>=379.11µs  <span class="attribute">mgasps</span>=0.000 <span class="attribute">number</span>=177 <span class="attribute">hash</span>=3580df…dbba77</span><br><span class="line"><span class="builtin-name">INFO</span> [04-09|14:31:48] Submitted contract creation              <span class="attribute">fullhash</span>=0xb09c872c6c72b0aedcad8ee8a50d0a04bd14c2ce02da2d2c2950b5ff865a5c59 <span class="attribute">contract</span>=0xb6b29ef90120bec597939e0eda6b8a9164f75deb</span><br><span class="line"><span class="builtin-name">INFO</span> [04-09|14:31:49] Imported new chain segment               <span class="attribute">blocks</span>=1 <span class="attribute">txs</span>=1 <span class="attribute">mgas</span>=0.109 <span class="attribute">elapsed</span>=620.595µs <span class="attribute">mgasps</span>=175.406 <span class="attribute">number</span>=178 <span class="attribute">hash</span>=110112…a5febd</span><br></pre></td></tr></table></figure></p>
+<p>在tendermint命令行窗口会看到如下log:<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">06</span>:<span class="number">31</span>:<span class="number">48.591</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">177</span> txs=<span class="number">0</span> hash=<span class="number">3580</span>DF3BC1C33F80A5B37A3B629245E5F42083028B9B752BAAAE5B5E89DBBA77</span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">06</span>:<span class="number">31</span>:<span class="number">49.611</span>] Executed <span class="built_in">block</span>                               module=<span class="keyword">state</span> height=<span class="number">178</span> validTxs=<span class="number">1</span> invalidTxs=<span class="number">0</span></span><br><span class="line">I[<span class="number">04</span>-<span class="number">09</span>|<span class="number">06</span>:<span class="number">31</span>:<span class="number">49.612</span>] Committed <span class="keyword">state</span>                              module=<span class="keyword">state</span> height=<span class="number">178</span> txs=<span class="number">1</span> hash=<span class="number">11011286</span>ECAB981CBB74665F3985E07840FA8CAA2665BB4D1D1BFFA1FEA5FEBD</span><br></pre></td></tr></table></figure></p>
+<p>在geth窗口会看到如下log,意味着合约提交到区块了：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; null [<span class="selector-tag">object</span> Object]</span><br><span class="line">Contract mined! <span class="selector-tag">address</span>: <span class="number">0</span>xb6b29ef90120bec597939e0eda6b8a9164f75deb transactionHash: <span class="number">0</span>xb09c872c6c72b0aedcad8ee8a50d0a04bd14c2ce02da2d2c2950b5ff865a5c59</span><br></pre></td></tr></table></figure></p>
+<p>根据交易反馈的hash取得对应区块的信息：<br>从区块信息上，该合约已经被成功的部署到链上，区块高度是178<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-tag">eth</span><span class="selector-class">.getTransaction</span>(<span class="string">'0xb09c872c6c72b0aedcad8ee8a50d0a04bd14c2ce02da2d2c2950b5ff865a5c59'</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attribute">blockHash</span>: <span class="string">"0x11011286ecab981cbb74665f3985e07840fa8caa2665bb4d1d1bffa1fea5febd"</span>,</span><br><span class="line">  <span class="attribute">blockNumber</span>: <span class="number">178</span>,</span><br><span class="line">  <span class="attribute">from</span>: <span class="string">"0x7eff122b94897ea5b0e2a9abf47b86337fafebdc"</span>,</span><br><span class="line">  <span class="attribute">gas</span>: <span class="number">4700000</span>,</span><br><span class="line">  <span class="attribute">gasPrice</span>: <span class="number">18000000000</span>,</span><br><span class="line">  <span class="attribute">hash</span>: <span class="string">"0xb09c872c6c72b0aedcad8ee8a50d0a04bd14c2ce02da2d2c2950b5ff865a5c59"</span>,</span><br><span class="line">  <span class="attribute">input</span>: <span class="string">"0x6060604052341561000f57600080fd5b60d38061001d6000396000f3006060604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c14606e575b600080fd5b3415605857600080fd5b606c60048080359060200190919050506094565b005b3415607857600080fd5b607e609e565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a723058205d8a5d19a07f5b8f9672432432fee6d2661eb120103442f96b4ae5d80886bfd30029"</span>,</span><br><span class="line">  <span class="attribute">nonce</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attribute">r</span>: <span class="string">"0xc21c1bc7b16316e8346a5a06b436d6ce722cda330549b0db9b8f00e6c9dbe8a6"</span>,</span><br><span class="line">  <span class="attribute">s</span>: <span class="string">"0x302aaaa5027401a22eba3bdebfeeb345f9862f237b5f12c3bf143ba2e6ba0961"</span>,</span><br><span class="line">  <span class="attribute">to</span>: null,</span><br><span class="line">  <span class="attribute">transactionIndex</span>: <span class="number">0</span>,</span><br><span class="line">  <span class="attribute">v</span>: <span class="string">"0x42"</span>,</span><br><span class="line">  <span class="attribute">value</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>与合约进行交互<br>根据合约类和地址取得合约实例：<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> store = simplestorageContract.<span class="built_in">at</span>(<span class="string">"0xb6b29ef90120bec597939e0eda6b8a9164f75deb"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>往合约上存储一段数据，提交后需要经过一个区块的打包验证，代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">store</span><span class="selector-class">.set</span><span class="selector-class">.sendTransaction</span>(100, &#123;<span class="attribute">from</span>:eth.accounts[<span class="number">0</span>]&#125;)</span><br><span class="line">"0<span class="selector-tag">x6f06e959b798751fb3f90b2d7e5ba28fc1cc33b31701df42cdbbf4f99e4dfc3d</span>"</span><br></pre></td></tr></table></figure></p>
+<p>从合约上获取数据<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; store<span class="selector-class">.get</span><span class="selector-class">.call</span>()</span><br><span class="line"><span class="number">100</span></span><br></pre></td></tr></table></figure></p>
+<p>通过交易的方式数据看不到数据返回显示，后面继续调查。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; store<span class="selector-class">.get</span><span class="selector-class">.sendTransaction</span>(<span class="selector-tag">a</span>, &#123;from:eth<span class="selector-class">.accounts</span>[<span class="number">0</span>]&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>这样就完成了合约的创建、部署与交互了。</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><ul>
+<li>Ethermint GetStarted: <a href="http://ethermint.readthedocs.io/en/master/getting-started/getting-started.html" target="_blank" rel="noopener">http://ethermint.readthedocs.io/en/master/getting-started/getting-started.html</a></li>
+<li>连接venus测试网络<a href="http://ethermint.readthedocs.io/en/master/testnets/venus.html#" target="_blank" rel="noopener">http://ethermint.readthedocs.io/en/master/testnets/venus.html#</a></li>
+<li>ethermint私有网络：<a href="https://github.com/b00f/ethermint-private-network" target="_blank" rel="noopener">https://github.com/b00f/ethermint-private-network</a></li>
+<li>Remix:<a href="https://ethereum.github.io/browser-solidity/" target="_blank" rel="noopener">https://ethereum.github.io/browser-solidity/</a></li>
+<li>tendermint:<a href="https://tendermint.com/" target="_blank" rel="noopener">https://tendermint.com/</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果感觉文章对您有帮助，就送两个糖果吧<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">以区块链</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ethermint</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">太坊</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tendetmint</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangmaodong.cn/2018/04/09/ethermint,tendetmint,private_net/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/06/eth/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于以太坊cpp_ethereum客户端的私有链搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//wangmaodong.cn/2018/04/09/ethermint,tendetmint,private_net/",
+  owner: 'wangmaodong',
+  repo: 'wangmaodong.github.io',
+  oauth: {
+    client_id: '74a97785fb29b255e34d',
+    client_secret: '6d7b704acc65794d03aaa5a257112bb5d7d407de',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -242,9 +444,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -361,11 +563,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">以区块链</a>
+                <a href="javascript:void(0)" class="js-tag color5">ethermint</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">太坊</a>
+                <a href="javascript:void(0)" class="js-tag color1">tendetmint</a>
               </li>
             
             <div class="clearfix"></div>

@@ -165,6 +165,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Blog_Markdown/ethermint/Ethermint私有连搭建-单机节点启动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/09/ethermint,tendetmint,private_net/">Ethermint私有连搭建-单机节点启动.md</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/09/ethermint,tendetmint,private_net/" class="archive-article-date">
+  	<time datetime="2018-04-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要利用ethermint去启动一个节点，并在本节点是去执行交易和挖矿以及部署一个简单的合约，从实际的部署和使用中去了解ethermint的使用</p>
+<h2 id="Ethermint安装"><a href="#Ethermint安装" class="headerlink" title="Ethermint安装"></a>Ethermint安装</h2><p>运行Ethermint需要安装ethermint和tendermint,主要有以下两种基本方式安装</p>
+<ul>
+<li>二进制文件下载安装</li>
+<li>源文件安装</li>
+</ul>
+<blockquote>
+<p>这里不做详细阐述，会在其他篇幅中提供，后面会附上其他文章的联建</p>
+</blockquote>
+<h2 id="Ethermint单机节点启动"><a href="#Ethermint单机节点启动" class="headerlink" title="Ethermint单机节点启动"></a>Ethermint单机节点启动</h2><h3 id="初始化创始文件"><a href="#初始化创始文件" class="headerlink" title="初始化创始文件"></a>初始化创始文件</h3><p>在运行Ethermint之前需要初始化tendermint和ethermint的创世配置等信息，提供了创世账户及其默认金额，这个可以单独配置。如果是二进制文件下载安装，需要下载创世账户和创世文件下载地址<a href="https://github.com/tendermint/ethermint/tree/develop/setup。" target="_blank" rel="noopener">https://github.com/tendermint/ethermint/tree/develop/setup。</a> 如果您从源代码安装，则可以执行如下命令获得。<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tendermint init <span class="params">--home</span> <span class="string">./ethermint/tendermint</span></span><br><span class="line">ethermint <span class="params">--datadir</span> <span class="string">./ethermint</span> init</span><br></pre></td></tr></table></figure></p>
+<p>执行完毕之后可以看到在ethermint/目录下生成keystore,在ethermint/tendermint下也会生成对应的config和genesis文件，具体这些创世文件的含义以及如何配置将会花单独的篇幅进行说明。<br>
+        
+          <a class="article-more-a" href="/2018/04/09/ethermint,tendetmint,private_net/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ethermint</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tendetmint</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/09/ethermint,tendetmint,private_net/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Blog_Markdown/eth/基于以太坊cpp_ethereum客户端私有链搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -202,11 +292,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">以区块链</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">太坊</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">以太坊</a>
         		</li>
       		
 		</ul>
@@ -656,11 +746,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">以区块链</a>
+                <a href="javascript:void(0)" class="js-tag color5">ethermint</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">太坊</a>
+                <a href="javascript:void(0)" class="js-tag color1">tendetmint</a>
               </li>
             
             <div class="clearfix"></div>
