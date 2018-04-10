@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//wangmaodong.cn">
-  <title>Tag: ethermint | Leon的博客</title>
+  <title>Ethermint私有连搭建-多节点网络 | Leon的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每天努力一点点">
-<meta name="keywords" content="Leon的博客，区块链">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leon的博客">
-<meta property="og:url" content="//wangmaodong.cn/tags/ethermint/index.html">
+  <meta name="description" content="前言上篇已经已经基于Ethermint搭建了一个单节点，并在这个节点上进行了一些基本的操作：查看区块、链的状态、合约编译、部署以及简单的交互等。本节主要讲解如何在这个基础上构建一个多节点的私有网络。  搭建一个多节点网络简单来说就是将新的节点与现有的节点建立连接，下面从建立新的节点并与已经存在的节点建立连接构建Ethermint网络 前置条件 版本信息首先确保在不同节点上使用的版本尽量一致，本次部">
+<meta name="keywords" content="区块链,ethermint,tendetmint,多节点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ethermint私有连搭建-多节点网络">
+<meta property="og:url" content="//wangmaodong.cn/2018/04/10/Ethermint私有链搭建-多节点网络/index.html">
 <meta property="og:site_name" content="Leon的博客">
-<meta property="og:description" content="每天努力一点点">
+<meta property="og:description" content="前言上篇已经已经基于Ethermint搭建了一个单节点，并在这个节点上进行了一些基本的操作：查看区块、链的状态、合约编译、部署以及简单的交互等。本节主要讲解如何在这个基础上构建一个多节点的私有网络。  搭建一个多节点网络简单来说就是将新的节点与现有的节点建立连接，下面从建立新的节点并与已经存在的节点建立连接构建Ethermint网络 前置条件 版本信息首先确保在不同节点上使用的版本尽量一致，本次部">
+<meta property="og:updated_time" content="2018-04-10T05:36:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leon的博客">
-<meta name="twitter:description" content="每天努力一点点">
+<meta name="twitter:title" content="Ethermint私有连搭建-多节点网络">
+<meta name="twitter:description" content="前言上篇已经已经基于Ethermint搭建了一个单节点，并在这个节点上进行了一些基本的操作：查看区块、链的状态、合约编译、部署以及简单的交互等。本节主要讲解如何在这个基础上构建一个多节点的私有网络。  搭建一个多节点网络简单来说就是将新的节点与现有的节点建立连接，下面从建立新的节点并与已经存在的节点建立连接构建Ethermint网络 前置条件 版本信息首先确保在不同节点上使用的版本尽量一致，本次部">
   
     <link rel="alternative" href="/atom.xml" title="Leon的博客" type="application/atom+xml">
   
@@ -163,36 +164,113 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Blog_Markdown/ethermint/Ethermint私有链搭建-多节点网络" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/10/Ethermint私有链搭建-多节点网络/" class="archive-article-date">
-  	<time datetime="2018-04-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/10/Ethermint私有链搭建-多节点网络/">Ethermint私有连搭建-多节点网络</a>
+    <h1 class="article-title" itemprop="name">
+      Ethermint私有连搭建-多节点网络
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/04/10/Ethermint私有链搭建-多节点网络/" class="archive-article-date">
+  	<time datetime="2018-04-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上篇已经已经基于Ethermint搭建了一个单节点，并在这个节点上进行了一些基本的操作：查看区块、链的状态、合约编译、部署以及简单的交互等。<br>本节主要讲解如何在这个基础上构建一个多节点的私有网络。<br>  搭建一个多节点网络简单来说就是将新的节点与现有的节点建立连接，下面从建立新的节点并与已经存在的节点建立连接构建Ethermint网络</p>
+<h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><ul>
+<li>版本信息<br>首先确保在不同节点上使用的版本尽量一致，本次部署使用的版本如下：<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tendermint</span> <span class="selector-pseudo">:0.14.0-88f5f21</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ethermint</span>:  0<span class="selector-class">.5</span><span class="selector-class">.3-deb7883</span></span><br><span class="line"><span class="selector-tag">go-ethereum</span>:  1<span class="selector-class">.6</span><span class="selector-class">.7-stable</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>初始化文件</li>
+</ul>
+<p>为了初始化节点需要ethermint 和tendermint 基本配置文件，首先建立存放这些配置文件的目录：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">makdir ethermint/ethermint</span><br><span class="line"><span class="built_in">mkdir</span> ethermint/tendermint</span><br></pre></td></tr></table></figure></p>
+<p>初始化文件主要是每一个ethermint和tendermint的geneis.json和一个用于tendermint的config.toml。可以参考已经启动的节点进行配置</p>
+<ul>
+<li><p>tendermint-genesis.json<br>查看已经启动节点的genesis.json配置，主要包括genesis_time\chain_id\validators\app_hash等信息，将这个文件拷贝到本机节点ethermint/tendermint目录，具体配置如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"genesis_time"</span>: <span class="string">"0001-01-01T00:00:00Z"</span>, </span><br><span class="line">    <span class="attr">"chain_id"</span>: <span class="string">"test-chain-rYaM42"</span>, </span><br><span class="line">    <span class="attr">"validators"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"pub_key"</span>: &#123;</span><br><span class="line">                <span class="attr">"type"</span>: <span class="string">"ed25519"</span>, </span><br><span class="line">                <span class="attr">"data"</span>: <span class="string">"721A2704D809CC9AB0414F8F7E3E7D0763110E2C66F99AA5843929549AB68B55"</span></span><br><span class="line">            &#125;, </span><br><span class="line">            <span class="attr">"power"</span>: <span class="number">10</span>, </span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">    ], </span><br><span class="line">    <span class="attr">"app_hash"</span>: <span class="string">""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tendermint-config.toml<br>查看已经启动节点的配置信息</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is a TOML config file.</span></span><br><span class="line"><span class="comment"># For more information, see https://github.com/toml-lang/toml</span></span><br><span class="line"></span><br><span class="line"><span class="attr">proxy_app</span> = <span class="string">"tcp://127.0.0.1:46658"</span></span><br><span class="line"><span class="attr">moniker</span> = <span class="string">"srv-ubuntu-001"</span></span><br><span class="line"><span class="attr">fast_sync</span> = <span class="literal">true</span></span><br><span class="line"><span class="attr">db_backend</span> = <span class="string">"leveldb"</span></span><br><span class="line"><span class="attr">log_level</span> = <span class="string">"state:info,*:error"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[rpc]</span></span><br><span class="line"><span class="attr">laddr</span> = <span class="string">"tcp://0.0.0.0:46657"</span></span><br><span class="line"></span><br><span class="line"><span class="section">[p2p]</span></span><br><span class="line"><span class="attr">laddr</span> = <span class="string">"tcp://0.0.0.0:46656"</span></span><br><span class="line"><span class="attr">seeds</span> = <span class="string">"172.20.11.11:46656,172.20.11.12:46656"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>seeds 是要要入网络中已经存在的节点，这里我们加入了之前已经启动的172.20.11.11:46656,172.20.11.12:46656两个内网节点  </p>
+<p>moniker 节点的别名，可以自己任意设置<br>将tendermint-config.toml拷贝到ethermint/tendermint目录</p>
+<ul>
+<li>ethermint genesis.json<br>我使用的ethermint是通过源码编译的，使用了默认的genesis.json。如果在使用了单独的配置，请将对应的genesis.json拷贝到ethermint/ethermint目录，下面是genesis.json的一个例子：<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"config"</span>: &#123;</span><br><span class="line">       <span class="string">"chainId"</span>: <span class="number">15</span>,</span><br><span class="line">       <span class="string">"homesteadBlock"</span>: <span class="number">0</span>,</span><br><span class="line">       <span class="string">"eip155Block"</span>: <span class="number">0</span>,</span><br><span class="line">       <span class="string">"eip158Block"</span>: <span class="number">0</span></span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="string">"nonce"</span>: <span class="string">"0xdeadbeefdeadbeef"</span>,</span><br><span class="line">   <span class="string">"timestamp"</span>: <span class="string">"0x00"</span>,</span><br><span class="line">   <span class="string">"parentHash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">   <span class="string">"mixhash"</span>: <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</span><br><span class="line">   <span class="string">"difficulty"</span>: <span class="string">"0x40"</span>,</span><br><span class="line">   <span class="string">"gasLimit"</span>: <span class="string">"0x8000000"</span>,</span><br><span class="line">   <span class="string">"alloc"</span>: &#123;</span><br><span class="line">       <span class="string">"0x7eff122b94897ea5b0e2a9abf47b86337fafebdc"</span>: &#123; <span class="string">"balance"</span>: <span class="string">"100000000000000"</span> &#125;,</span><br><span class="line">       <span class="string">"0xc6713982649D9284ff56c32655a9ECcCDA78422A"</span>: &#123; <span class="string">"balance"</span>: <span class="string">"10000000000000000000000000000000000"</span> &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="启动新节点并加入网络"><a href="#启动新节点并加入网络" class="headerlink" title="启动新节点并加入网络"></a>启动新节点并加入网络</h2><ul>
+<li><p>初始化配置</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ethermint --datadir ./ethermint init</span><br><span class="line"><span class="builtin-name">INFO</span> [04-09|17:47:21] Allocated cache <span class="keyword">and</span> file handles         <span class="attribute">database</span>=ethermint/ethermint/chaindata <span class="attribute">cache</span>=16 <span class="attribute">handles</span>=16</span><br><span class="line"><span class="builtin-name">INFO</span> [04-09|17:47:21] Writing custom genesis block </span><br><span class="line"><span class="builtin-name">INFO</span> [04-09|17:47:21] successfully wrote genesis block <span class="keyword">and</span>/<span class="keyword">or</span> chain rule <span class="builtin-name">set</span> <span class="attribute">hash</span>=2b72f9…d468ac</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动tendermint和ethermint<br>执行如下命令启动tendermint和ethermint</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tendermint <span class="params">--home</span> <span class="string">./ethermint/tendermint/</span> node &amp;</span><br><span class="line"></span><br><span class="line">ethermint <span class="params">--datadir</span> <span class="string">./ethermint</span> <span class="params">--rpc</span> <span class="params">--rpcaddr=0</span>.0.0.0 <span class="params">--ws</span> <span class="params">--wsaddr=0</span>.0.0.0 <span class="params">--rpcapi</span> eth,net,web3,personal,admin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可以看到如下log,<br>seeds = “172.20.11.11:46656,172.20.11.12”<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">ethermint <span class="comment">--datadir ./ethermint --rpc --rpcaddr=0.0.0.0 --ws --wsaddr=0.0.0.0 --rpcapi eth,net,web3,personal,adminE[04-10|02:35:47.394] abci.socketClient failed to connect to tcp://127.0.0.1:46658.  Retrying... module=abci-client connection=query</span></span><br><span class="line">E[04-10|02:35:50.395] abci.socketClient failed to connect to tcp://127.0.0.1:46658.  Retrying... module=abci-client connection=query</span><br><span class="line">E[04-10|02:35:53.396] abci.socketClient failed to connect to tcp://127.0.0.1:46658.  Retrying... module=abci-client connection=query</span><br><span class="line"></span><br><span class="line">INFO [04-10|10:35:53] Starting peer-to-peer node               instance=ethermint/v1.6.7-stable/linux-amd64/go1.9.3</span><br><span class="line">INFO [04-10|10:35:53] Allocated <span class="keyword">cache</span> <span class="keyword">and</span> <span class="keyword">file</span> handles         <span class="keyword">database</span>=/home/bcadmin/test_net/ethermint/ethermint/chaindata <span class="keyword">cache</span>=<span class="number">128</span> handles=<span class="number">1024</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Initialised <span class="keyword">chain</span> configuration          config=<span class="string">"&#123;ChainID: 15 Homestead: 0 DAO: &lt;nil&gt; DAOSupport: false EIP150: &lt;nil&gt; EIP155: 0 EIP158: 0 Metropolis: &lt;nil&gt; Engine: unknown&#125;"</span></span><br><span class="line">WARN [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Ethash used <span class="keyword">in</span> fake <span class="keyword">mode</span> </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Initialising Ethereum protocol           <span class="keyword">versions</span>=<span class="string">"[63 62]"</span> network=<span class="number">1</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Loaded most recent <span class="keyword">local</span> header          <span class="built_in">number</span>=<span class="number">0</span> <span class="keyword">hash</span>=<span class="number">2</span>b72f9…d468ac td=<span class="number">64</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Loaded most recent <span class="keyword">local</span> <span class="keyword">full</span> <span class="keyword">block</span>      <span class="built_in">number</span>=<span class="number">0</span> <span class="keyword">hash</span>=<span class="number">2</span>b72f9…d468ac td=<span class="number">64</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Loaded most recent <span class="keyword">local</span> <span class="keyword">fast</span> <span class="keyword">block</span>      <span class="built_in">number</span>=<span class="number">0</span> <span class="keyword">hash</span>=<span class="number">2</span>b72f9…d468ac td=<span class="number">64</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] <span class="keyword">Starting</span> P2P networking </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] RLPx listener up                         <span class="keyword">self</span>=<span class="string">"enode://5d08ceaa3bef92832f1017598e68ab05d732e60cf794471f8d5b28a6cf6dc34b815c6d7cfbe8f9100a89d41c17846b7fadf2ea71bb49473e824e82f6027f55ef@[::]:30303?discport=0"</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] <span class="keyword">HTTP</span> endpoint opened: <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8545</span> </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] IPC endpoint opened: /home/bcadmin/test_net/ethermint/geth.ipc </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] WebSocket endpoint opened: ws://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">8546</span> </span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">53</span>] Waiting <span class="keyword">for</span> tendermint endpoint <span class="keyword">to</span> <span class="keyword">start</span> err=<span class="string">"Post http://localhost:46657/status: dial tcp [::1]:46657: getsockopt: connection refused"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">55</span>] <span class="keyword">Starting</span> ABCIServer                      <span class="keyword">module</span>=abci-<span class="keyword">server</span> impl=ABCIServer</span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">55</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">56</span>] Accepted a <span class="keyword">new</span> <span class="keyword">connection</span>                <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">56</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">56</span>] Accepted a <span class="keyword">new</span> <span class="keyword">connection</span>                <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">56</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">56</span>] Accepted a <span class="keyword">new</span> <span class="keyword">connection</span>                <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">INFO [<span class="number">04</span><span class="number">-10</span>|<span class="number">10</span>:<span class="number">35</span>:<span class="number">56</span>] Waiting <span class="keyword">for</span> <span class="keyword">new</span> connection...            <span class="keyword">module</span>=abci-<span class="keyword">server</span></span><br><span class="line">E[<span class="number">04</span><span class="number">-10</span>|<span class="number">02</span>:<span class="number">35</span>:<span class="number">59.412</span>] <span class="keyword">Error</span> <span class="keyword">in</span> <span class="keyword">seed</span><span class="string">'s address                      module=p2p err="Error in address 172.20.11.12: address 172.20.11.12: missing port in address"</span></span><br><span class="line"><span class="string">I[04-10|02:36:01.274] Executed block                               module=state height=1 validTxs=0 invalidTxs=0</span></span><br><span class="line"><span class="string">INFO [04-10|10:36:01] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=632.784µs mgasps=0.000 number=1 hash=54e78b…2439ec</span></span><br><span class="line"><span class="string">I[04-10|02:36:01.279] Committed state                              module=state height=1 txs=0 hash=54E78B3DB3D7B301ECE58F04FA19BC850C65D3882531936D511924BFCC2439EC</span></span><br><span class="line"><span class="string">I[04-10|02:36:01.293] Executed block                               module=state height=2 validTxs=0 invalidTxs=0</span></span><br><span class="line"><span class="string">INFO [04-10|10:36:01] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=723.608µs mgasps=0.000 number=2 hash=c6762c…5ab53c</span></span><br><span class="line"><span class="string">I[04-10|02:36:01.297] Committed state                              module=state height=2 txs=0 hash=C6762C2BA136C47D7E4B4B7ED22E8657B2ABE9835302DACEDA2D4D91495AB53C</span></span><br><span class="line"><span class="string">I[04-10|02:36:02.174] Executed block                               module=state height=3 validTxs=0 invalidTxs=0</span></span><br><span class="line"><span class="string">INFO [04-10|10:36:02] Imported new chain segment               blocks=1 txs=0 mgas=0.000 elapsed=637.738µs mgasps=0.000 number=3 hash=02cb11…5abea8</span></span><br></pre></td></tr></table></figure></p>
+<p>成功连接了其他节点，已经已经开始同步块了，从上面的log当中其中有一段错误信息如下：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E[<span class="number">04</span>-<span class="number">10</span>|<span class="number">02</span>:<span class="number">35</span>:<span class="number">59.412</span>] Error <span class="keyword">in</span> seed's address                      <span class="attr">module=p2p</span> <span class="attr">err="Error</span> <span class="keyword">in</span> address <span class="number">172.20</span>.<span class="number">11.12</span>: address <span class="number">172.20</span>.<span class="number">11.12</span>: missing port <span class="keyword">in</span> address<span class="string">"</span></span><br></pre></td></tr></table></figure></p>
+<p>经查看是我在输入配置seeds时少配置了端口<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">seeds</span> = <span class="string">"172.20.11.11:46656,172.20.11.12"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="与新加入的节点进行交互"><a href="#与新加入的节点进行交互" class="headerlink" title="与新加入的节点进行交互"></a>与新加入的节点进行交互</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">geth attach <span class="string">http:</span><span class="comment">//172.20.11.13:8545</span></span><br><span class="line">Welcome to the Geth JavaScript console!</span><br><span class="line"></span><br><span class="line"><span class="string">instance:</span> ethermint<span class="regexp">/v1.6.7-stable/</span>linux-amd64/go1<span class="number">.9</span><span class="number">.3</span></span><br><span class="line"><span class="string">coinbase:</span> <span class="number">0x7eff122b94897ea5b0e2a9abf47b86337fafebdc</span></span><br><span class="line">at <span class="string">block:</span> <span class="number">73429</span> (Tue, <span class="number">10</span> Apr <span class="number">2018</span> <span class="number">13</span>:<span class="number">09</span>:<span class="number">17</span> CST)</span><br><span class="line"><span class="symbol"> datadir:</span> <span class="regexp">/home/</span>bcadmin<span class="regexp">/test_net/</span>ethermint</span><br><span class="line"><span class="symbol"> modules:</span> <span class="string">admin:</span><span class="number">1.0</span> <span class="string">eth:</span><span class="number">1.0</span> <span class="string">net:</span><span class="number">1.0</span> <span class="string">personal:</span><span class="number">1.0</span> <span class="string">rpc:</span><span class="number">1.0</span> <span class="string">web3:</span><span class="number">1.0</span></span><br><span class="line"></span><br><span class="line">&gt; </span><br><span class="line">&gt; eth.blockNumber</span><br><span class="line"><span class="number">73467</span></span><br></pre></td></tr></table></figure>
+<h2 id="一些疑问："><a href="#一些疑问：" class="headerlink" title="一些疑问："></a>一些疑问：</h2><p>从私有链网络搭建过程中，可以看出还有很多问题没有明白，现简单整理一下，日后调查：</p>
+<ul>
+<li>tendermint与ethermint的详细参数设置以及含义</li>
+<li>tendermint负责网络和共识，监控网络状态的工具等</li>
+<li>ethermint集成了以太坊区块链存储合约等其他功能，geth工具也可以使用，它和tendermint如何集成的，修改了哪些东西，原理和结构层次还不太清晰</li>
+<li>在搭建过程中发现ethermint 还是存在一些bug的，目前官方已经基本没有多少更新</li>
+<li>其他待整理</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>连接ethermint venus 测试网络： <a href="http://ethermint.readthedocs.io/en/develop/testnets/venus.html" target="_blank" rel="noopener">http://ethermint.readthedocs.io/en/develop/testnets/venus.html</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>如果感觉文章对您有帮助，就送两个糖果吧<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/wangmaodong/Blog_Markdown/master/images/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,65 +294,122 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangmaodong.cn/2018/04/10/Ethermint私有链搭建-多节点网络/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/09/ethermint,tendetmint,private_net/" class="archive-article-date">
-  	<time datetime="2018-04-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/09/ethermint,tendetmint,private_net/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ethermint私有链搭建-单机节点启动</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/09/ethermint,tendetmint,private_net/">Ethermint私有链搭建-单机节点启动</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ethermint</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tendetmint</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "//wangmaodong.cn/2018/04/10/Ethermint私有链搭建-多节点网络/",
+  owner: 'wangmaodong',
+  repo: 'wangmaodong.github.io',
+  oauth: {
+    client_id: '74a97785fb29b255e34d',
+    client_secret: '6d7b704acc65794d03aaa5a257112bb5d7d407de',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -296,9 +431,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
